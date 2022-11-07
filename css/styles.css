@@ -13,6 +13,8 @@ html {
     --section-title-color: #212121;
     --accent-color: #2196F3;
     --hero-title-color: #FFFFFF;
+    --cubic-bezier: cubic-bezier(0.4, 0, 0.2, 1);
+    --duration: 250ms;
    
 
 }
@@ -137,8 +139,7 @@ body {
     display: inline-block;
     padding-top: 32px;
     padding-bottom: 32px;
-    transition-property: color;
-    transition-duration: 400mc;
+    transition: color var(--duration) var(--cubic-bezier);
 
 }
 
@@ -180,8 +181,7 @@ body {
     letter-spacing: 0.02em;
     display: flex;
     align-items: center;
-    transition: color var(--transition-duration) var(--transition-timing-function);
-   
+    transition: color var(--duration) var(--cubic-bezier);
 }
 .contact-tel {
     color: var(--primary-text-color);
@@ -191,7 +191,8 @@ body {
     letter-spacing: 0.02em;
     display: flex;
     align-items: center;
-    transition: color var(--transition-duration) var(--transition-timing-function);
+    transition: color var(--duration) var(--cubic-bezier);
+    
 }
 .tel-soc-icon {
     width: 16px;
@@ -284,10 +285,9 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
-    transition: border var(--transition-duration) var(--transition-timing-function);;
+    transition: border-color var(--duration) var(--cubic-bezier);
 }
-
-.view-link:hover {
+.view-link: hover {
     border-color:var(--accent-color);
 }
 
@@ -415,11 +415,12 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
-    transition-property: background-color, fill ;
-    transition-duration: 500mc;
-    transition-timing-function: cubic-bezier(0.075, 0.82, 0.165, 1);
+    transition: background-color var(--duration) var(--cubic-bezier), fill var(--duration) var(--cubic-bezier) ;
 }
-
+.team-soc-icon {
+    fill: #AFB1B8;
+    transition: fill var(--duration) var(--cubic-bezier);
+}
 
 .team-soc-link:hover, .team-soc-link:focus {
     background-color:var(--accent-color);
@@ -429,9 +430,7 @@ body {
     fill: var(--hero-title-color);
 }
 
-.team-soc-icon {
-    fill: #AFB1B8;
-}
+
 
 .test-soc-list {
     display: flex;
@@ -445,6 +444,7 @@ body {
 .test-soc-icon {
     width: 106px;
     height: 60px;
+    transition: fill var(--duration) var(--cubic-bezier);
 }
 .test-link {
     width: 100%;
@@ -455,6 +455,7 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
+    transition: border-color var(--duration) var(--cubic-bezier), fill var(--duration) var(--cubic-bezier);
 }
 
 .test-link:hover, .test-link:focus {
@@ -529,12 +530,14 @@ body {
     font-size: 14px;
     line-height: 1.71;
     letter-spacing: 0.03em;
+    transition: color var(--duration) var(--cubic-bezier);
 }
 
 .footer-tel {
     font-size: 14px;
     line-height: 1.71;
     letter-spacing: 0.03em;
+    transition: color var(--duration) var(--cubic-bezier);
 }
 
 .footer-logo-studio {
@@ -578,6 +581,7 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
+    transition: background-color var(--duration) var(--cubic-bezier);
 }
 .footer-soc-link:hover,  .footer-soc-link:focus {
     background-color: var(--accent-color);
@@ -610,6 +614,7 @@ fill: var(--hero-title-color);
     border: none;
     padding: 6px 22px;
     border-radius: 4px;
+    transition: color var(--duration) var(--cubic-bezier), background-color var(--duration) var(--cubic-bezier), box-shadow var(--duration) var(--cubic-bezier)
  
    
 }
@@ -630,7 +635,7 @@ fill: var(--hero-title-color);
     box-sizing: border-box;
     
 }
-.portfolio-card {
+.portofolio-card {
    
     width: 370px;
     height: 404px;
@@ -639,11 +644,34 @@ fill: var(--hero-title-color);
     width: calc((100% - 60px)/3);
     box-sizing: border-box;
     display: block;
-   
+    transition: transform var(--duration) var(--cubic-bezier) ;
+  
+}
+.portofolio-card:hover .portofolio-top-text {
+transform: translateY(0%);
+
+}
+.portofolio-top-wrap {
+    position: relative;
+    overflow: hidden;
+}
+.portofolio-top-text {
+    position: absolute;
+    top: 0;
+    padding: 24px 63px;
+    color:var(--hero-title-color);
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 1.5;
+    background-color: rgba(33, 150, 243, 0.9);
+    height: 100%;
+    transform: translateY(100%);
+    transition: transform var(--duration) var(--cubic-bezier);
 }
 .card-link {
     display: block;
     text-decoration: none;
+    transition: box-shadow var(--duration) var(--cubic-bezier);
  
 }
 .card-link:hover, .card-link:focus {
